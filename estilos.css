@@ -1,0 +1,84 @@
+:root {
+  --rokoPoke: #d4392e;
+  --blancoPoke: #f3f3f3;
+  --negroPoke: #444c4b;
+  --tamanioPokeBola: 250px;
+  --tamanioCintaPokebola: ;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.pokebola {
+  width: var(--tamanioPokeBola);
+  height: var(--tamanioPokeBola);
+  border-radius: var(--tamanioPokeBola);
+  background-color: var(--negroPoke);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: rotate(-18deg) rotateX(-10deg);
+}
+
+.tapa {
+  width: 250px;
+  height: calc((var(--tamanioPokeBola) / 2));
+  border-radius: calc(var(--tamanioPokeBola) / 2)
+    calc(var(--tamanioPokeBola) / 2) 0 0;
+}
+
+.roja {
+  background-image: radial-gradient(farthest-corner at 2px 3px , var(--blancoPoke) 0%, var(--rokoPoke) 50%);
+}
+.blanca {
+  bottom: 0;
+  background-image: radial-gradient(circle,white, gray);
+  transform: rotate(180deg);
+}
+
+.cinta {
+  z-index: 2;
+  width: var(--tamanioPokeBola);
+  height: 30px;
+  background-color: var(--negroPoke);
+  top: calc((var(--tamanioPokeBola) / 2) - 15px);
+  overflow: hidden;
+}
+
+.cinta::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: var(--blancoPoke);
+  margin-top: -1px;
+  margin-left: calc((var(--tamanioPokeBola) / 2) - 20px);
+  border-radius: 100%;
+  box-shadow: 0px 0px 0px 0.9px var(--negroPoke),
+    0px 0px 0px 8px var(--blancoPoke), 0px 0px 0px 22px var(--negroPoke);
+}
+
+.sombra {
+    margin-top: 30px;
+    width: calc(var(--tamanioPokeBola) / 3);
+    box-shadow: 5px 1px 20px 5px black;
+
+}
